@@ -1,3 +1,5 @@
+// hello world en rust
+
 fn main() {
-    println!("Hello, world!");
+    
 }
