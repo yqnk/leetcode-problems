@@ -12,13 +12,11 @@ public:
         }
 
         int histogram[256]{0};
-        for (char c : s) {
-            histogram[c] += 1;
-            std::cout << c << ":" << histogram[c] << std::endl;
+        for (char c : s) { // (auto c : s)
+            ++histogram[c];
         }
-        for (char c : t) {
-            histogram[c] -= 1;
-            std::cout << c << ":" << histogram[c] << std::endl;
+        for (char c : t) { // (auto c : t)
+            --histogram[c];
         }
         for (int i = 0; i < 256; i++) {
             if (histogram[i] != 0) {
@@ -31,8 +29,8 @@ public:
 
 int main(void) {
     Solution solution;
-    string s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
-    string t = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba";
+    string s = "";
+    string t = "";
     bool ans = solution.isAnagram(s, t);
     if (ans) {
         exit(EXIT_SUCCESS);
