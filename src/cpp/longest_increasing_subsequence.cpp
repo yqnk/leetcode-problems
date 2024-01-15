@@ -43,7 +43,7 @@ int lengthOfLIS(vector<int>& nums) {
     vector<int> paths(nums.size(), -1);
 
     // find longest path in graph
-    for (int i = 0; i < adj.size(); ++i) {
+    for (int i = adj.size() - 1; i >= 0; --i) {
         r = max(r, longestPath(adj, i, paths));
     }
     return r;
